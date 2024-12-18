@@ -1,0 +1,27 @@
+{
+    "ad": {
+        "column": {
+            "entity_id": true,
+            "label": true,
+            "content": true,
+            "link": true,
+            "started_at": true,
+            "ended_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "ad_category": {
+        "column": {
+            "item_id": true,
+            "ad_id": true,
+            "category_id": true
+        },
+        "constraint": {
+            "AD_CATEGORY_AD_ID_AD_ENTITY_ID": true,
+            "AD_CATEGORY_CATEGORY_ID_CATALOG_CATEGORY_ENTITY_ENTITY_ID": true,
+            "PRIMARY": true
+        }
+    }
+}
