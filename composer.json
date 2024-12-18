@@ -1,0 +1,21 @@
+{
+  "name": "niji/module-ad-manager",
+  "description": "Catalog advertising manager",
+  "version": "1.0.0",
+  "require": {
+    "magento/framework": "103.0.*",
+    "magento/module-catalog": "104.0.*"
+  },
+  "type": "magento2-module",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Niji\\AdManager\\": ""
+    }
+  },
+  "require-dev": {
+    "magento/magento-coding-standard": "^5.0"
+  }
+}

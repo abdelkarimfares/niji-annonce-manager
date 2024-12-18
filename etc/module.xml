@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+ * Copyright (c) 2024 NIJI
+ * All rights reserved
+ *
+ * This product includes proprietary software developed at NIJI COMPANY
+ *
+ * To obtain a valid license for using this software please contact us at
+ * license@niji.com
+ *
+ * @package    Niji_Ad_Manager
+ * @copyright  Copyright (c) 2024 NIJI
+ * @author     abdelkarim fares <abdelkarimfares94@gmail.com>
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Niji_Ad_Manager">
+        <sequence>
+            <module name="Magento_Backend"/>
+            <module name="Magento_Catalog"/>
+        </sequence>
+    </module>
+</config>
