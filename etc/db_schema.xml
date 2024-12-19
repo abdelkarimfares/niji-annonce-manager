@@ -10,33 +10,9 @@
         <column xsi:type="varchar" name="link" nullable="true" length="255" comment="Ad link"/>
         <column xsi:type="date" name="started_at" nullable="true" comment="Started At"/>
         <column xsi:type="date" name="ended_at" nullable="true" comment="Ended At"/>
+        <column xsi:type="text" name="categories" nullable="true" comment="ad selected categories"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="entity_id"/>
-        </constraint>
-    </table>
-
-    <table name="ad_category">
-        <column xsi:type="int" name="item_id" unsigned="true" nullable="false" identity="true" comment="Ad Category item ID"/>
-        <column xsi:type="int" name="ad_id" unsigned="true" nullable="false" identity="false" comment="Ad ID"/>
-        <column xsi:type="int" name="category_id" unsigned="true" nullable="false" identity="false" comment="Category ID"/>
-        <constraint xsi:type="foreign"
-                    referenceId="ITEM_AD_ID"
-                    table="ad_category"
-                    column="ad_id"
-                    referenceTable="ad"
-                    referenceColumn="entity_id"
-                    onDelete="CASCADE"
-        />
-        <constraint xsi:type="foreign"
-                    referenceId="ITEM_CATEGORY_ID"
-                    table="ad_category"
-                    column="category_id"
-                    referenceTable="catalog_category_entity"
-                    referenceColumn="entity_id"
-                    onDelete="CASCADE"
-        />
-        <constraint xsi:type="primary" referenceId="PRIMARY">
-            <column name="item_id"/>
         </constraint>
     </table>
 </schema>

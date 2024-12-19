@@ -6,7 +6,8 @@
             "content": true,
             "link": true,
             "started_at": true,
-            "ended_at": true
+            "ended_at": true,
+            "categories": true
         },
         "constraint": {
             "PRIMARY": true
