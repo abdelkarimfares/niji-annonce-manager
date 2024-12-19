@@ -14,6 +14,6 @@
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Niji_Ad_Manager',
+    'Niji_AdManager',
     __DIR__
 );
