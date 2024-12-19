@@ -22,9 +22,9 @@ use Niji\AdManager\Model\ResourceModel\Ad\CollectionFactory;
 class Form extends AbstractDataProvider
 {
     /**
-     * @param $name
-     * @param $primaryFieldName
-     * @param $requestFieldName
+     * @param string $name
+     * @param string $primaryFieldName
+     * @param string $requestFieldName
      * @param CollectionFactory $collectionFactory
      * @param array $meta
      * @param array $data
