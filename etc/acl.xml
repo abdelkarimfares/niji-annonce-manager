@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Niji_AdManager::manage" title="Ads Manager" sortOrder="80">
+                    <resource id="Niji_AdManager::listing" title="Show List Ads"/>
+                    <resource id="Niji_AdManager::edit" title="Edit or create Ad"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
