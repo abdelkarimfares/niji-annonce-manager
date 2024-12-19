@@ -20,6 +20,9 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
  */
 class Collection extends AbstractCollection
 {
+    /**
+     * @inheirtDoc
+     */
     protected $_idFieldName = \Niji\AdManager\Model\ResourceModel\Ad::PRIMARY_KEY;
 
     protected function _construct()

@@ -36,10 +36,10 @@ class AdRepository implements AdRepositoryInterface
     /**
      * @inheirtDoc
      */
-    public function getById(int $AdId): AdInterface
+    public function getById(int $adId): AdInterface
     {
         $ad = $this->adFactory->create();
-        $this->adResource->load($ad, $AdId);
+        $this->adResource->load($ad, $adId);
 
         if (!$ad->getId()) {
             throw new \Magento\Framework\Exception\NoSuchEntityException(

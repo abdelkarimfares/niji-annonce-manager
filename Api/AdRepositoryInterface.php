@@ -10,11 +10,11 @@ use Niji\AdManager\Api\Data\AdInterface;
 interface AdRepositoryInterface
 {
     /**
-     * @param int $AdId
+     * @param int $adId
      * @return AdInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
-    public function getById(int $AdId): AdInterface;
+    public function getById(int $adId): AdInterface;
 
     /**
      * Create Ad
