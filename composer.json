@@ -15,7 +15,13 @@
       "Niji\\AdManager\\": ""
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Niji\\AdManager\\Test\\": "Test/"
+    }
+  },
   "require-dev": {
-    "magento/magento-coding-standard": "^5.0"
+    "magento/magento-coding-standard": "^5.0",
+    "phpunit/phpunit": "^9.5"
   }
 }
