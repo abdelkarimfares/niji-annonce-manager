@@ -41,6 +41,18 @@ class Validator
             );
         }
 
+        if (!$ad->getStartedAt()) {
+            throw new \Magento\Framework\Exception\ValidatorException(
+                __("Started at date is required")
+            );
+        }
+
+        if (!$ad->getEndedAt()) {
+            throw new \Magento\Framework\Exception\ValidatorException(
+                __("Ended at date is required")
+            );
+        }
+
         return true;
     }
 }
