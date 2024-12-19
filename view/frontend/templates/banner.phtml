@@ -1,0 +1,33 @@
+<?php
+/**@var \Niji\AdManager\Block\Banner $block * */
+/**@var Magento\Framework\Escaper $escaper * */
+?>
+
+<div class="banner-wrapper" id="banner-wrapper"></div>
+
+<script>
+    require([
+        'jquery',
+        'mage/url'
+    ], function ($, urlBuilder) {
+        const container = $('#banner-wrapper');
+        const url = urlBuilder.build('nijiads/ad/load');
+        const category = <?= $block->getCurrentCategoryId() ?>;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'html',
+            data: {
+                category
+            },
+            success: function (response) {
+                container.append($(response))
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    })
+</script>
+

@@ -32,4 +32,33 @@ class Collection extends AbstractCollection
             \Niji\AdManager\Model\ResourceModel\Ad::class
         );
     }
+
+    /**
+     * Get Ads Between Two Date
+     *
+     * @param string $date
+     * @return $this
+     */
+    public function addDateFilter(string $date): static
+    {
+        $this->addFieldToFilter('started_at', ['lteq' => $date])
+            ->addFieldToFilter('ended_at', ['gteq' => $date]);
+
+        return $this;
+    }
+
+    /**
+     * Add Category Filter
+     *
+     * @param int $categoryId
+     * @return $this
+     */
+    public function addCategoryFilter(int $categoryId): static
+    {
+        $this->getSelect()->where(
+            "FIND_IN_SET(?, `categories`)", $categoryId
+        );
+
+        return $this;
+    }
 }

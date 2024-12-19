@@ -1,0 +1,68 @@
+<?php
+
+/**@var Niji\AdManager\Block\Slides $block * */
+/**@var Magento\Framework\Escaper $escaper * */
+
+$items = $block->getActiveAds();
+$count = count($items);
+?>
+
+<div class="slides-wrapper" id="slides-wrapper">
+    <div class="slides-inner">
+        <?php if($count > 1) : ?>
+        <button class="navigation-btn btn-prev">&#10096;</button>
+        <?php endif; ?>
+        <div class="slides" id="ad-slides">
+            <?php foreach ($items as $index => $item): ?>
+                <div class="<?= $index === 0 ? 'active' : '' ?> slide">
+                    <div class="slides-content">
+                        <p><?= $escaper->escapeHtml($item->getLabel()) ?></p>
+                        <a class="slides-link"
+                           target="_blank"
+                           title="<?= $escaper->escapeHtmlAttr(__('click pour savoir plus')) ?>"
+                           href="<?= $escaper->escapeUrl($item->getLink()) ?>"><?= __('En savoir plus') ?></a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <?php if($count > 1) : ?>
+        <button class="navigation-btn btn-next">&#10097;</button>
+        <?php endif; ?>
+    </div>
+</div>
+
+<script>
+
+    require([
+        'jquery'
+    ], function ($) {
+        const slidesContainer = $('#ad-slides');
+        const slides = slidesContainer.find('.slide');
+        const nextBtn = $('#slides-wrapper .btn-next');
+        const prevBtn = $('#slides-wrapper .btn-prev');
+        let currentIndex = 0;
+        const totalItems = slides.length
+
+        const refresh = () => {
+            $(slides[currentIndex])
+                .addClass('active')
+                .siblings()
+                .removeClass('active')
+        }
+
+        nextBtn.click(() => {
+            if (currentIndex < (totalItems - 1)) {
+                currentIndex++;
+                refresh()
+            }
+        })
+
+        prevBtn.click(() => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                refresh();
+            }
+        })
+    })
+</script>
+
