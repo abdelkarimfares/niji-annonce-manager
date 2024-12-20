@@ -7,6 +7,7 @@
                 <resource id="Niji_AdManager::manage" title="Ads Manager" sortOrder="80">
                     <resource id="Niji_AdManager::listing" title="Show List Ads"/>
                     <resource id="Niji_AdManager::edit" title="Edit or create Ad"/>
+                    <resource id="Niji_AdManager::delete" title="Delete Ad"/>
                 </resource>
             </resource>
         </resources>
