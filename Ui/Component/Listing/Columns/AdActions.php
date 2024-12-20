@@ -59,6 +59,11 @@ class AdActions extends Column
                     'nijiadmanager/ad/delete',
                     __('Delete')->render()
                 );
+
+                $item[$this->getData('name')]['delete']['confirm'] = [
+                    'title' => __('Delete Ad'),
+                    'message' => __('Are you sure you wan\'t to delete the ad?')
+                ];
             }
         }
 
