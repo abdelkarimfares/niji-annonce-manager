@@ -29,15 +29,15 @@ class Validator
      */
     public function validate(AdInterface $ad): bool
     {
-        if (strlen(trim($ad->getLabel())) <= 2) {
+        if (!$this->greaterThan($ad->getLabel(), 2)) {
             throw new \Magento\Framework\Exception\ValidatorException(
                 __("Label must be at least 2 characters long")
             );
         }
 
-        if (strlen(trim($ad->getContent())) <= 5) {
+        if (!$this->greaterThan($ad->getContent(), 5)) {
             throw new \Magento\Framework\Exception\ValidatorException(
-                __("Label must be at least 5 characters long")
+                __("Content must be at least 5 characters long")
             );
         }
 
@@ -54,5 +54,15 @@ class Validator
         }
 
         return true;
+    }
+
+    /**
+     * @param string $value
+     * @param int $length
+     * @return bool
+     */
+    private function greaterThan(string $value, int $length): bool
+    {
+        return strlen(trim($value)) >= $length;
     }
 }
