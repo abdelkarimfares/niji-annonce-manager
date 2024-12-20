@@ -12,7 +12,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Exception\StateException;
 use Magento\Framework\Exception\ValidatorException;
 use Niji\AdManager\Api\Data\AdInterface;
-use Niji\AdManager\Model\AdRepository;
+use Niji\AdManager\Api\AdRepositoryInterface;
 use Niji\AdManager\Model\AdFactory;
 use Niji\AdManager\Helper\Ad\Validator as AdValidator;
 use Psr\Log\LoggerInterface;
@@ -39,17 +39,17 @@ class Save extends Action
 
     /**
      * @param Context $context
-     * @param AdRepository $adRepository
+     * @param AdRepositoryInterface $adRepository
      * @param AdFactory $adFactory
      * @param AdValidator $validator
      * @param LoggerInterface $logger
      */
     public function __construct(
-        Action\Context                   $context,
-        private readonly AdRepository    $adRepository,
-        private readonly AdFactory       $adFactory,
-        private readonly AdValidator     $validator,
-        private readonly LoggerInterface $logger
+        Action\Context                         $context,
+        private readonly AdRepositoryInterface $adRepository,
+        private readonly AdFactory             $adFactory,
+        private readonly AdValidator           $validator,
+        private readonly LoggerInterface       $logger
     )
     {
         parent::__construct($context);

@@ -7,7 +7,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Niji\AdManager\Model\AdRepository;
+use Niji\AdManager\Api\AdRepositoryInterface;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -32,12 +32,12 @@ class Delete extends Action
 
     /**
      * @param Context $context
-     * @param AdRepository $adRepository
+     * @param AdRepositoryInterface $adRepository
      * @param LoggerInterface $logger
      */
     public function __construct(
         Action\Context                   $context,
-        private readonly AdRepository    $adRepository,
+        private readonly AdRepositoryInterface    $adRepository,
         private readonly LoggerInterface $logger
     )
     {

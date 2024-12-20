@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+
+    <preference for="Niji\AdManager\Api\AdRepositoryInterface"
+                type="Niji\AdManager\Model\AdRepository"/>
+
+    <preference for="Niji\AdManager\Api\Data\AdInterface"
+                type="Niji\AdManager\Model\Ad"/>
+
+</config>
