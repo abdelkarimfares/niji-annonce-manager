@@ -5,6 +5,9 @@
 
 $items = $block->getActiveAds();
 $count = count($items);
+if (!$count) {
+    return '';
+}
 ?>
 
 <div class="slides-wrapper" id="slides-wrapper">

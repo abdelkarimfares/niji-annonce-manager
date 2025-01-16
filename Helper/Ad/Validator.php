@@ -35,11 +35,11 @@ class Validator
             );
         }
 
-        if (!$this->greaterThan($ad->getContent(), 5)) {
-            throw new \Magento\Framework\Exception\ValidatorException(
-                __("Content must be at least 5 characters long")
-            );
-        }
+//        if (!$this->greaterThan($ad->getContent(), 5)) {
+//            throw new \Magento\Framework\Exception\ValidatorException(
+//                __("Content must be at least 5 characters long")
+//            );
+//        }
 
         if (!$ad->getStartedAt()) {
             throw new \Magento\Framework\Exception\ValidatorException(
